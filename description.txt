@@ -1,0 +1,11 @@
+This mod allows to throw multiple fishing lines at the same time, thus consuming more bait.
+
+I may add more content to the mod as I receive feedback :), so if you wish to see other features, such as accesories, mechanics, baits or any other, post a comment with the suggested changed!
+
+  Features
+Adds lures to each rod depending on the rarity of the rod
+Multiplier to change the amount of lures
+
+  Compatibilities
+  The mod will work with any rod from any mod, however, the following mods have been explicitly modified (thus, being full compatible)
+- Calamity mod
