@@ -1,17 +1,10 @@
-﻿using BetterFishing.Model.Multilure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BetterFishing.Multilure;
 using Terraria.ModLoader;
 
 namespace BetterFishing.Compat
 {
     public abstract class AbstractCompat
     {
-        public static List<AbstractCompat> _compats = new List<AbstractCompat>();
-
         public abstract string ModName { get; }
 
         public bool IsEnabled() => Mod != null;
@@ -22,12 +15,16 @@ namespace BetterFishing.Compat
         {
             if (ModLoader.TryGetMod(ModName, out Mod))
             {
-                MultilureMod multilureMod = new(Mod);
-                _compats.Add(this);
-                //Load(multilureMod);
+                LoadMultilure(MultilureModRegistry.Modded(Mod));
             }
         }
 
-        protected abstract void Load(MultilureMod Multilure);
+        public void TryDisable()
+        {
+            if (!IsEnabled())
+                return;
+        }
+
+        protected abstract void LoadMultilure(MultilureModRegistry Reg);
     }
 }

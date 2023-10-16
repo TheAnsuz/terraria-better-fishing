@@ -1,0 +1,31 @@
+[h1]Information[/h1]
+Current version: 2.1.0
+This mod aims to make fishing a greater and overall faster experience for the player. 
+Right now the only modification of this mod is a multilure system but more features are being developed.
+
+The mod at a [u]beta[/u] state, meaning that some features may change in the future and not all content is completly integrated.
+
+[h1]Features[/h1]
+[b]Multilure[/b]
+There is a complex multilure system that allows for each rod to throw lures depending on some conditions.
+Due to how this system was approached before I decided to add a configuration so you can revert the system to the older implementation.
+
+To give a description of what does each implementation:
+[list]
+ [*][u]SIMPLE[/u] There are no conditions or complexity for the multilure system, each rod has its own amount of lures to throw.
+ [*][u]NORMAL[/u] The amount of lures for each rod can depend on complex conditions, such as biome, height, health, mana etc...
+ [*][u]DISABLED[/u] If you dont like the multilure feature, you can disable it completly.
+[/list]
+
+[b]More features on future releases[/b]
+[code]If you have any suggestion or idea of any feature that could look cool for the mod, let me know in the comment section ;)[/code]
+[hr][/hr]
+
+[h1]Compatibility[/h1]
+There are no known incompatibilities.
+
+All Vanilla rods have their own implementation
+All Calamity rods have their own implementation
+
+[code]My goal in terms of compatibility is that the mod should be compatible with any other mod worldwide and must not break functionallity of other mods.
+If there is any known incompatibility I will explictly work to fix it or at least notify the users about it[/code]

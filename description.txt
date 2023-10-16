@@ -1,11 +1,31 @@
-This mod allows to throw multiple fishing lines at the same time, thus consuming more bait.
+___________
+Information
+	Current version: 2.1.0
+	This mod aims to make fishing a greater and overall faster experience for the player. 
+	Right now the only modification of this mod is a multilure system but more features are being developed.
 
-I may add more content to the mod as I receive feedback :), so if you wish to see other features, such as accesories, mechanics, baits or any other, post a comment with the suggested changed!
+	The mod at a BETA state, meaning that some features may change in the future and not all content is completly integrated.
+___________________________________
 
-  Features
-Adds lures to each rod depending on the rarity of the rod
-Multiplier to change the amount of lures
+________
+Features
+	MULTILURE
+	There is a complex multilure system that allows for each rod to throw lures depending on some conditions.
+	Due to how this system was approached before I decided to add a configuration so you can revert the system to the older implementation.
 
-  Compatibilities
-  The mod will work with any rod from any mod, however, the following mods have been explicitly modified (thus, being full compatible)
-- Calamity mod
+	To give a description of what does each implementation:
+	- SIMPLE: There are no conditions or complexity for the multilure system, each rod has its own amount of lures to throw.
+	- NORMAL: The amount of lures for each rod can depend on complex conditions, such as biome, height, health, mana etc...
+	- DISABLED: If you dont like the multilure feature, you can disable it completly.
+
+	More features on future releases
+	If you have any suggestion or idea of any feature that could look cool for the mod, let me know in the comment section ;)
+___________________________________
+
+_____________
+Compatibility
+	There are no known incompatibilities.
+
+	All vanilla rods have their own implementation
+	All Calamity rods have their own implementation
+___________________________________
