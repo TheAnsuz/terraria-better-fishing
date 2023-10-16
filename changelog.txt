@@ -1,1 +1,8 @@
-﻿
+﻿Version 2.1.0 - 15/10/2023
+
+[h2]Fixed[/h2]
+ - Fixed wrong descriptions
+ - Images from the mod and workshop
+
+[h2]Added[/h2]
+ - Calamity compatibility
