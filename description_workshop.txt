@@ -1,5 +1,5 @@
 [h1]Information[/h1]
-Current version: 2.1.1
+Current version: 2.2.0
 This mod aims to make fishing a greater and overall faster experience for the player. 
 Right now the only modification of this mod is a multilure system but more features are being developed.
 

@@ -1,6 +1,7 @@
 displayName = Better fishing
 author = TheAnsuz
-version = 2.1.1
+version = 2.2.0
 hideCode = true
 hideResources = true
 sortAfter = CalamityMod
+homepage = https://github.com/TheAnsuz/terraria-better-fishing
