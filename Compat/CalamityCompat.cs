@@ -25,22 +25,26 @@ namespace BetterFishing.Compat
 
         protected override void LoadMultilure(MultilureModRegistry Reg)
         {
+            // 2 simple, 2 normal
             Reg.Create(MultilureMode.NORMAL, WulfrumFishingPole)
-                .AddLines(1)
-                .AddTooltip(WulfrumFishingPole, 1)
+                .AddLines(2)
+                .AddTooltip(WulfrumFishingPole, 2)
                 .FinishAlsoFor(MultilureMode.SIMPLE);
 
+            // [2-3] simple, [2-3] normal
             Reg.Create(MultilureMode.NORMAL, NavyFishingRod)
                .AddLines(min: 2, max: 3)
                .AddTooltip(NavyFishingRod, 2, 3)
                .FinishAlsoFor(MultilureMode.SIMPLE);
 
+            // 4 simple, 4 normal
             Reg.Create(MultilureMode.NORMAL, FeralDoubleRod)
                 .AddLines(4)
                 .AddTooltip(FeralDoubleRod, 4)
                 .RemoveTooltip("Tooltip0")
                 .FinishAlsoFor(MultilureMode.SIMPLE);
 
+            // 6 simple, 6 + [0/2] normal
             Reg.Create(MultilureMode.NORMAL, EarlyBloomRod)
                 .AddLines(6)
                 .AddLines(2, MultilureCondition.Biome(BiomeUtils.JUNGLE))
@@ -52,6 +56,7 @@ namespace BetterFishing.Compat
                 .RemoveTooltip("Tooltip0")
                 .Finish();
 
+            // 10 simple, 10 normal
             Reg.Create(MultilureMode.NORMAL, TheDevourerofCods)
                 .AddLines(10)
                 .ReplaceTooltip("Tooltip0", TheDevourerofCods)
@@ -62,6 +67,7 @@ namespace BetterFishing.Compat
                 .AddTooltip(TheDevourerofCods, 10)
                 .Finish();
 
+            // 2 simple, [0-3] normal
             Reg.Create(MultilureMode.NORMAL, SlurperPole)
                 .AddLines(1, MultilureCondition.Not(MultilureCondition.Biome(BiomeUtils.SNOW, BiomeUtils.SPACE)))
                 .AddLines(2, MultilureCondition.Biome(BiomeUtils.UNDERWORLD))
@@ -69,9 +75,10 @@ namespace BetterFishing.Compat
                 .AddTooltip(SlurperPole, 1, 3)
                 .FinishAnd(MultilureMode.SIMPLE)
                 .AddLines(2)
-                .AddTooltip(SlurperPole, 3)
+                .AddTooltip(SlurperPole, 2)
                 .Finish();
 
+            // 2 simple, [0-3] normal
             Reg.Create(MultilureMode.NORMAL, VerstaltiteFishingRod)
                 .AddLines(1, MultilureCondition.Not(MultilureCondition.Biome(BiomeUtils.UNDERWORLD, BiomeUtils.DESERT)))
                 .AddLines(2, MultilureCondition.Biome(BiomeUtils.SNOW))
@@ -82,6 +89,7 @@ namespace BetterFishing.Compat
                 .AddTooltip(VerstaltiteFishingRod, 2)
                 .Finish();
 
+            // 3 simple, 1 + [0-3] normal
             Reg.Create(MultilureMode.NORMAL, HeronRod)
                 .AddLines(1)
                 .AddLines(1, MultilureCondition.Custom(
@@ -102,12 +110,13 @@ namespace BetterFishing.Compat
                         return Math.Abs(WorldUtils.Wind) > 18;
                     })
                 )
-                .AddTooltip(HeronRod, 2, 3)
+                .AddTooltip(HeronRod, 1, 3)
                 .FinishAnd(MultilureMode.SIMPLE)
-                .AddLines(2)
+                .AddLines(3)
                 .AddTooltip(HeronRod, 3)
                 .Finish();
 
+            // [3-5] simple, [2-4] + [0-3] normal
             Reg.Create(MultilureMode.NORMAL, RiftReeler)
                 .AddLines(min: 2, max: 4)
                 .AddLines(1, MultilureCondition.Not(MultilureCondition.Biome(BiomeUtils.SNOW, BiomeUtils.SPACE)))
@@ -120,36 +129,6 @@ namespace BetterFishing.Compat
                 .RemoveTooltip("Tooltip0")
                 .AddTooltip(RiftReeler, 3, 5)
                 .Finish();
-            /*
-
-            Reg.Create(MultilureMode.NORMAL, TheDevourerofCods)
-                .AddLines(2)
-                .AddTooltip(TheDevourerofCods, 2)
-                .RemoveTooltip("Tooltip0")
-                .RemoveTooltip("Tooltip1")
-                .FinishAlsoFor(MultilureMode.SIMPLE);
-
-            /*
-            Multilure.Item(WulfrumFishingPole).
-                SetMultilure(MultilureShootProvider.RangedAmount(1, 2)).
-                SetDescription(MultilureDescriptionProvider.AddDescription(Mod, WulfrumFishingPole, "1", "2"));
-            */
-            //Multilure.Register(EarlyBloomRod).Bobbler_FixedAmount(100).Description_Simple(EarlyBloomRod, 100);
-
-            /*
-             * Le pasas un nombre de registro
-             * Del cual obtiene el ModItem y la id
-             * El metodo SimpleDescription usará por defecto el nombre que le pasas en el registro
-             * 
-             * Multilure.Register(name).SimpleBobbler(bobblers: 5).SimpleDescription();
-             * 
-             *  * Usar bloque 'using'
-             * 
-             * 
-             * 
-             * Obtener datos:
-             * Multilure.Get(id).BobblerProvider/DescriptionProvider
-             */
         }
     }
 }
