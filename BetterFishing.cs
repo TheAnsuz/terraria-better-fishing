@@ -46,34 +46,39 @@ namespace BetterFishing
 
         public void LoadMultilure(MultilureRegistry Reg)
         {
+            // 2 simple, 2 normal
             Reg.Create(MultilureMode.SIMPLE, ItemID.WoodFishingPole)
-                .AddLines(1, spread: 5)
-                .AddTooltip("WoodFishingPole", 1)
+                .AddLines(2, spread: 5)
+                .AddTooltip("WoodFishingPole", 2)
                 .FinishAlsoFor(MultilureMode.NORMAL);
 
+            // 2 simple, 2 normal
             Reg.Create(MultilureMode.SIMPLE, ItemID.ReinforcedFishingPole)
-                .AddLines(1, spread: 5)
-                .AddTooltip("ReinforcedFishingPole", 1)
+                .AddLines(2, spread: 5)
+                .AddTooltip("ReinforcedFishingPole", 2)
                 .FinishAlsoFor(MultilureMode.NORMAL);
 
+            // 2 simple, 2 + [0/2] normal
             Reg.Create(MultilureMode.SIMPLE, ItemID.FisherofSouls)
-                .AddLines(1, spread: 5)
-                .AddTooltip("FisherofSouls", 1)
+                .AddLines(2, spread: 5)
+                .AddTooltip("FisherofSouls", 2)
                 .FinishAnd(MultilureMode.NORMAL)
-                .AddLines(1, spread: 5)
-                .AddLines(1, MultilureCondition.Biome(BiomeUtils.CORRUPTION))
-                .AddTooltip("Fleshcatcher", 1, 1)
+                .AddLines(2, spread: 5)
+                .AddLines(2, MultilureCondition.Biome(BiomeUtils.CORRUPTION))
+                .AddTooltip("Fleshcatcher", 2, 2)
                 .Finish();
 
+            // 2 simple, 2 + [0/2] normal
             Reg.Create(MultilureMode.SIMPLE, ItemID.Fleshcatcher)
-                .AddLines(1, spread: 5)
-                .AddTooltip("Fleshcatcher", 1)
+                .AddLines(2, spread: 5)
+                .AddTooltip("Fleshcatcher", 2)
                 .FinishAnd(MultilureMode.NORMAL)
-                .AddLines(1, spread: 5)
-                .AddLines(1, MultilureCondition.Biome(BiomeUtils.CRIMSON))
-                .AddTooltip("Fleshcatcher", 1, 1)
+                .AddLines(2, spread: 5)
+                .AddLines(2, MultilureCondition.Biome(BiomeUtils.CRIMSON))
+                .AddTooltip("Fleshcatcher", 2, 2)
                 .Finish();
 
+            // 3 simple, 1 + [0-3] normal
             Reg.Create(MultilureMode.NORMAL, ItemID.ScarabFishingRod)
                 .AddLines(1)
                 .AddLines(1, MultilureCondition.Custom(
@@ -95,6 +100,7 @@ namespace BetterFishing
                 .AddTooltip("ScarabFishingRod", 3)
                 .Finish();
 
+            // 4 simple, 1 + [0-4] normal
             Reg.Create(MultilureMode.NORMAL, ItemID.BloodFishingRod)
                 .AddLines(1)
                 .AddLines(1, MultilureCondition.Custom(
@@ -116,6 +122,7 @@ namespace BetterFishing
                 .AddTooltip("BloodFishingRod", 4)
                 .Finish();
 
+            // 7 simple, 5 + [0/5] + [0/10] normal
             Reg.Create(MultilureMode.NORMAL, ItemID.GoldenFishingRod)
                 .AddLines(5)
                 .AddLines(5, MultilureCondition.Chance(20))
@@ -126,6 +133,7 @@ namespace BetterFishing
                 .AddTooltip("GoldenFishingRod", 7)
                 .Finish();
 
+            // 3 simple, 1 + [0/1] + [0-2] normal
             Reg.Create(MultilureMode.NORMAL, ItemID.HotlineFishingHook)
                 .AddLines(1)
                 .AddLines(1, MultilureCondition.Not(MultilureCondition.Biome(BiomeUtils.SNOW, BiomeUtils.SPACE)))
@@ -137,13 +145,15 @@ namespace BetterFishing
                 .AddTooltip("HotlineFishingHook", 3)
                 .Finish();
 
+            // [3-5] simple, [3-5] normal
             Reg.Create(MultilureMode.NORMAL, ItemID.SittingDucksFishingRod)
-                .AddLines(min: 3, max: 4)
+                .AddLines(min: 3, max: 5)
                 .AddTooltip("SittingDucksFishingRod", 3, 4)
                 .FinishAlsoFor(MultilureMode.SIMPLE);
 
+            // [3-4] simple, [3-4] + [0/1] normal
             Reg.Create(MultilureMode.NORMAL, ItemID.MechanicsRod)
-                .AddLines(min: 2, max: 4)
+                .AddLines(min: 3, max: 4)
                 .AddLines(1, MultilureCondition.Custom(
                     (Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) =>
                     {
