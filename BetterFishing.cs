@@ -26,8 +26,6 @@ namespace BetterFishing
             Instance = this;
 
             Calamity = new CalamityCompat();
-
-            Terraria.On_Player.GetFishingConditions += ModPlayerHooks.CustomFishingConditions;
         }
 
         public override void PostSetupContent()
