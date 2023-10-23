@@ -1,1 +1,5 @@
 ﻿Version 2.2.0
+
+[h2]Added[/h2]
+- Angler shop
+- Added shop compatibility for calamity mod
