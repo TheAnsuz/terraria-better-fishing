@@ -13,7 +13,7 @@ Mods: {
 
 			Header: {
 				Multilure: "[i:2373] Multilure"
-				AnglerShop: "[i:2374] Angler shop"
+				AnglerShop: "[i:BetterFishing/QuestCoinItem] Angler shop"
 			}
 
 			AnglerShopMode: {
