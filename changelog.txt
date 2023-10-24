@@ -1,4 +1,5 @@
 ﻿Version 2.2.0
 
 [h2]Fixed[/h2]
--Minor code inconsistecies for multilure module
+-Minor code inconsistencies for multilure module
+-Improved configuration tooltips
