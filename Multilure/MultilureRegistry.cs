@@ -51,7 +51,6 @@ namespace BetterFishing.Multilure
                 return new MultilureEntry(_mod.Name, mode, item.Type);
 
             BetterFishing.Instance.Logger.Error($"Failed to create multilure entry for {_mod.Name}'s {itemName}");
-            BetterFishing.Errors = true;
             return new MultilureEntry("ERROR", mode, -1);
         }
     }
