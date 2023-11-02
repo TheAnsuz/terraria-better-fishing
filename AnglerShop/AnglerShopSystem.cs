@@ -60,6 +60,11 @@ namespace BetterFishing.AnglerShop
             QuestCoinCurrencyID = CustomCurrencyManager.RegisterCurrency(currency);
         }
 
+        public override void OnWorldUnload()
+        {
+            AnglerShop.CloseAnglerShop();
+        }
+
         public override void PostUpdateInput()
         {
             if (Main.keyState.IsKeyDown(Keys.Escape))
