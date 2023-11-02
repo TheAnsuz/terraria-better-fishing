@@ -1,121 +1,111 @@
-Mods: {
-	BetterFishing: {
-		Configs: {
-			MultilureMode: {
-				Tooltip: Changes how the multilure complexity and conditions works
-				DISABLED.Label: DISABLED
-				SIMPLE.Label: SIMPLE
-				NORMAL.Label: NORMAL
-				Label: Multilure Mode
-			}
-
-			Header: {
-				Multilure: "[i:2373] Multilure"
-				Quests: "[i:2367] Angler quests"
-			}
-
-			ConfigName: Global configuration
-
-			QuestPlayerPercent: {
-				Label: Required player percent
-				Tooltip:
-					'''
-						The amount of players required to have completed the angler quest to allow it to change
-						A value of 100 requires every single player to have completed the quest while a value of 0 allows the quest to change naturally
-					'''
-			}
-
-			AutoRenew: {
-				Label: Auto renew quests
-				Tooltip:
-					'''
-						Whenever a player completes his quest there will be a change attempt.
-						This attempt to change the quest will only succeed if the [c/45d1c8:Required player percent]
-						is met.
-					'''
-			}
-
-			QuestTimeMinutes: {
-				Label: Quest Time Minutes
-				Tooltip: The amount of ingame minutes that need to pass before the next quest is available
-			}
-
-			QuestTimeHours: {
-				Label: Quest Time Hours
-				Tooltip: The amount of ingame hours that need to pass before the next quest is available
-			}
-
-			QuestTimeDays: {
-				Label: Quest Time Days
-				Tooltip: The amount of ingame days that need to pass before the next quest is available
-			}
-		}
-
-		Multilure: {
-			Vanilla: {
-				SIMPLE: {
-					WoodFishingPole: This rod fires {0} {^0:line;lines at the same time}
-					ReinforcedFishingPole: This rod fires {0} {^0:line;lines at the same time}
-					FisherofSouls: This rod fires {0} {^0:line;lines at the same time}
-					Fleshcatcher: This rod fires {0} {^0:line;lines at the same time}
-					ScarabFishingRod: This rod fires {0} {^0:line;lines at the same time}
-					BloodFishingRod: This rod fires {0} {^0:line;lines at the same time}
-					GoldenFishingRod: This rod fires {0} {^0:line;lines at the same time}
-					HotlineFishingHook: This rod fires {0} {^0:line;lines at the same time}
-					SittingDucksFishingRod: This rod fires between {0} and {1} {^1:line;lines}
-					MechanicsRod: This rod fires between {0} and {1} {^1:line;lines}
-					FiberglassFishingPole: This rod fires {0} {^0:line;lines at the same time}
-				}
-
-				NORMAL: {
-					WoodFishingPole: This rod fires {0} {^0:line;lines at the same time}
-					ReinforcedFishingPole: This rod fires {0} {^0:line;lines at the same time}
-					FisherofSouls: This rod fires {0} {^0:line;lines} plus {1} extra at Corruption
-					Fleshcatcher: This rod fires {0} {^0:line;lines} plus {1} extra at Crimson
-					ScarabFishingRod: This rod fires {0} {^0:line;lines} and consumes {2} mana per extra line (up to {3} lines)
-					BloodFishingRod: This rod fires {0} {^0:line;lines} and consumes {2} health per extra line (up to {3} lines)
-					GoldenFishingRod: This rod fires {0} {^0:line;lines} and has a {2}% chance to shoot {1} extra {^1:line;lines} and a {4}% chance to shoot {3} extra {^3:line;lines}
-					HotlineFishingHook: This rod fires between {0} and {1} {^1:line;lines} depending on the heat of the biome
-					SittingDucksFishingRod: This rod fires between {0} and {1} {^1:line;lines}
-					MechanicsRod: This rod fires between {0} and {1} {^1:line;lines} plus {2} extra {^2:line;lines} at night
-					FiberglassFishingPole: This rod fires between {0} and {1} {^1:line;lines} depending on the humidity of the biome
-				}
-			}
-
-			CalamityMod: {
-				NORMAL: {
-					WulfrumRod: This rod fires {0} {^0:line;lines at the same time}
-					SlurperPole: Throws between {0} and {1} {^1:line;lines} depending on the heat of the biome. Doesn't work on cold biomes
-					HeronRod: This rod fires {0} {^0:line;lines} and adds up to {1} depending speed of the wind
-					VerstaltiteFishingRod: Throws between {0} and {1} {^1:line;lines} depending on the heat of the biome. Doesn't work on hot biomes
-					RiftReeler: This rod fires between {0} and {1} {^1:line;lines} and can add up to {2} lines depending of the heat of the biome
-					FeralDoubleRod: This rod fires {0} {^0:line;lines at the same time}
-					EarlyBloomRod: This rod fires {0} {^0:line;lines at the same time} and adds {1} {^1:line;lines} at Jungle
-					NavyFishingRod: This rod fires between {0} and {1} {^1:line;lines}
-					TheDevourerofCods: This rod fires {0} {^0:line;lines at the same time}
-				}
-
-				SIMPLE: {
-					WulfrumRod: This rod fires {0} {^0:line;lines at the same time}
-					SlurperPole: This rod fires {0} {^0:line;lines at the same time}
-					HeronRod: This rod fires {0} {^0:line;lines at the same time}
-					VerstaltiteFishingRod: This rod fires {0} {^0:line;lines at the same time}
-					RiftReeler: This rod fires between {0} and {1} {^1:line;lines}
-					FeralDoubleRod: This rod fires {0} {^0:line;lines at the same time}
-					EarlyBloomRod: This rod fires {0} {^0:line;lines at the same time}
-					NavyFishingRod: This rod fires between {0} and {1} {^1:line;lines}
-					TheDevourerofCods: This rod fires {0} {^0:line;lines at the same time}
-				}
-
-				REPLACE.TheDevourerofCods: Line never snaps and can fish in lava
-			}
-		}
-
-		Buffs: {
-			AumentedFishingPower: {
-				DisplayName: Fishing inspiration
-				Description: Increments your fishing power
-			}
-		}
-	}
+{
+  "Mods": {
+    "BetterFishing": {
+      "Configs": {
+        "ConfigName": "Global configuration",
+        "Header": {
+          "Multilure": "[i:2373] Multilure",
+          "AnglerShop": "[i:BetterFishing/QuestCoinItem] Angler shop",
+          "Quests": "[i:2367] Angler quests"
+        },
+        "MultilureMode": {
+          "Label": "Multilure Mode",
+          "Tooltip": "Changes how the multilure complexity and conditions works",
+          "DISABLED.Label": "DISABLED",
+          "SIMPLE.Label": "SIMPLE",
+          "NORMAL.Label": "NORMAL"
+        },
+        "QuestPlayerPercent": {
+          "Label": "Required player percent",
+          "Tooltip": "\tThe amount of players required to have completed the angler quest to allow it to change\n\tA value of 100 requires every single player to have completed the quest while a value of 0 allows the quest to change naturally"
+        },
+        "AutoRenew": {
+          "Label": "Auto renew quests",
+          "Tooltip": "\tWhenever a player completes his quest there will be a change attempt.\n\tThis attempt to change the quest will only succeed if the [c/45d1c8:Required player percent]\n\tis met."
+        },
+        "QuestTimeMinutes": {
+          "Label": "Quest Time Minutes",
+          "Tooltip": "The amount of ingame minutes that need to pass before the next quest is available"
+        },
+        "QuestTimeHours": {
+          "Label": "Quest Time Hours",
+          "Tooltip": "The amount of ingame hours that need to pass before the next quest is available"
+        },
+        "QuestTimeDays": {
+          "Label": "Quest Time Days",
+          "Tooltip": "The amount of ingame days that need to pass before the next quest is available"
+        },
+        "AnglerShopMode": {
+          "Label": "Angler Shop Mode",
+          "Tooltip": "Changes the requirements for different angler items to appear in the shop\n[c/42b9f5:Disabled]: Fully disables the angler shop\n[c/42b9f5:Simple]: Every item is always available (except hardmode)\n[c/42b9f5:Progressive]: Items unlock depending on the amount of quests completed and game stage\n[c/42b9f5:Conditional]: Items unlock depending on conditions such as where is the angler housed\n[c/42b9f5:Complex]: Items unlock depending on the amount of quests and complex conditions [c/80e0b0:Recommended]",
+          "DISABLED.Label": "[c/cc5343:DISABLED]",
+          "COMPLEX.Label": "[c/80e0b0:COMPLEX]",
+          "PROGRESSIVE.Label": "PROGRESSIVE",
+          "SIMPLE.Label": "SIMPLE",
+          "CONDITIONAL.Label": "CONDITIONAL"
+        }
+      },
+      "Multilure": {
+        "Vanilla": {
+          "SIMPLE": {
+            "WoodFishingPole": "This rod fires {0} {^0:line;lines at the same time}",
+            "ReinforcedFishingPole": "This rod fires {0} {^0:line;lines at the same time}",
+            "FisherofSouls": "This rod fires {0} {^0:line;lines at the same time}",
+            "Fleshcatcher": "This rod fires {0} {^0:line;lines at the same time}",
+            "ScarabFishingRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "BloodFishingRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "GoldenFishingRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "HotlineFishingHook": "This rod fires {0} {^0:line;lines at the same time}",
+            "SittingDucksFishingRod": "This rod fires between {0} and {1} {^1:line;lines}",
+            "MechanicsRod": "This rod fires between {0} and {1} {^1:line;lines}",
+            "FiberglassFishingPole": "This rod fires {0} {^0:line;lines at the same time}"
+          },
+          "NORMAL": {
+            "WoodFishingPole": "This rod fires {0} {^0:line;lines at the same time}",
+            "ReinforcedFishingPole": "This rod fires {0} {^0:line;lines at the same time}",
+            "FisherofSouls": "This rod fires {0} {^0:line;lines} plus {1} extra at Corruption",
+            "Fleshcatcher": "This rod fires {0} {^0:line;lines} plus {1} extra at Crimson",
+            "ScarabFishingRod": "This rod fires {0} {^0:line;lines} and consumes {2} mana per extra line (up to {3} lines)",
+            "BloodFishingRod": "This rod fires {0} {^0:line;lines} and consumes {2} health per extra line (up to {3} lines)",
+            "GoldenFishingRod": "This rod fires {0} {^0:line;lines} and has a {2}% chance to shoot {1} extra {^1:line;lines} and a {4}% chance to shoot {3} extra {^3:line;lines}",
+            "HotlineFishingHook": "This rod fires between {0} and {1} {^1:line;lines} depending on the heat of the biome",
+            "SittingDucksFishingRod": "This rod fires between {0} and {1} {^1:line;lines}",
+            "MechanicsRod": "This rod fires between {0} and {1} {^1:line;lines} plus {2} extra {^2:line;lines} at night",
+            "FiberglassFishingPole": "This rod fires between {0} and {1} {^1:line;lines} depending on the humidity of the biome"
+          }
+        },
+        "CalamityMod": {
+          "NORMAL": {
+            "WulfrumRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "SlurperPole": "Throws between {0} and {1} {^1:line;lines} depending on the heat of the biome. Doesn't work on cold biomes",
+            "HeronRod": "This rod fires {0} {^0:line;lines} and adds up to {1} depending speed of the wind",
+            "VerstaltiteFishingRod": "Throws between {0} and {1} {^1:line;lines} depending on the heat of the biome. Doesn't work on hot biomes",
+            "RiftReeler": "This rod fires between {0} and {1} {^1:line;lines} and can add up to {2} lines depending of the heat of the biome",
+            "FeralDoubleRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "EarlyBloomRod": "This rod fires {0} {^0:line;lines at the same time} and adds {1} {^1:line;lines} at Jungle",
+            "NavyFishingRod": "This rod fires between {0} and {1} {^1:line;lines}",
+            "TheDevourerofCods": "This rod fires {0} {^0:line;lines at the same time}"
+          },
+          "SIMPLE": {
+            "WulfrumRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "SlurperPole": "This rod fires {0} {^0:line;lines at the same time}",
+            "HeronRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "VerstaltiteFishingRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "RiftReeler": "This rod fires between {0} and {1} {^1:line;lines}",
+            "FeralDoubleRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "EarlyBloomRod": "This rod fires {0} {^0:line;lines at the same time}",
+            "NavyFishingRod": "This rod fires between {0} and {1} {^1:line;lines}",
+            "TheDevourerofCods": "This rod fires {0} {^0:line;lines at the same time}"
+          },
+          "REPLACE.TheDevourerofCods": "Line never snaps and can fish in lava"
+        }
+      },
+      "Buffs": {
+        "AumentedFishingPower": {
+          "DisplayName": "Fishing inspiration",
+          "Description": "Increments your fishing power"
+        }
+      }
+    }
+  }
 }

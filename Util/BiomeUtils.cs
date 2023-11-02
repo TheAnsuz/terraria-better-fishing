@@ -48,6 +48,14 @@ namespace BetterFishing.Util
         public const int HALLOWED_UNDERGROUND = 119;
         // Special based
         public const int DUNGEON = 50;
+        public const int BEEHIVE = 51;
+        public const int MARBLE = 52;
+        public const int GRANITE = 53;
+        public const int GRAVEYARD = 54;
+        public const int TEMPLE = 55;
+        public const int METEORITE = 56;
+        public const int GLOWSHROOM = 57;
+        public const int GEMCAVE = 58;
 
         public static bool InBiome(Player player, ModBiome biome)
         {
@@ -110,6 +118,16 @@ namespace BetterFishing.Util
 
                 HALLOWED => player.ZoneHallow,
                 HALLOWED_UNDERGROUND => player.ZoneHallow && player.ZoneUnderworldHeight,
+
+                DUNGEON => player.ZoneDungeon,
+                MARBLE => player.ZoneMarble,
+                GRANITE => player.ZoneGranite,
+                BEEHIVE => player.ZoneHive,
+                GRAVEYARD => player.ZoneGraveyard,
+                TEMPLE => player.ZoneLihzhardTemple,
+                GEMCAVE => player.ZoneGemCave,
+                GLOWSHROOM => player.ZoneGlowshroom,
+                METEORITE => player.ZoneMeteor,
                 _ => false
             };
         }
