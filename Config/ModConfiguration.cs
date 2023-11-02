@@ -30,6 +30,14 @@ namespace BetterFishing.Config
             }
         }
 
+        public override void OnChanged()
+        {
+            AnglerShop.AnglerShop.CalculatedMaxLine = 0;
+
+            if (AnglerShop.AnglerShop.IsOpen)
+                AnglerShop.AnglerShop.OpenAnglerShop();
+        }
+
         [Header($"${LANGUAGE_SECTION}.Header.Multilure")]
         [DefaultValue(MultilureMode.NORMAL)]
         [DrawTicks]
@@ -37,13 +45,35 @@ namespace BetterFishing.Config
         [TooltipKey($"${LANGUAGE_SECTION}.MultilureMode.Tooltip")]
         public MultilureMode MultilureMode;
 
-        /*
-        [DefaultValue(MultilurePower.NORMAL)]
+        [Header($"${LANGUAGE_SECTION}.Header.AnglerShop")]
+        [DefaultValue(AnglerShopMode.COMPLEX)]
         [DrawTicks]
-        [ReloadRequired]
-        [LabelKey($"${LANGUAGE_SECTION}.MultilurePower.Label")]
-        [TooltipKey($"${LANGUAGE_SECTION}.MultilurePower.Tooltip")]
-        public MultilurePower MultilurePower;
-        */
+        [LabelKey($"${LANGUAGE_SECTION}.AnglerShopMode.Label")]
+        [TooltipKey($"${LANGUAGE_SECTION}.AnglerShopMode.Tooltip")]
+        public AnglerShopMode AnglerShopMode;
+        
+        [Header($"${LANGUAGE_SECTION}.Header.Quests")]
+        [DefaultValue(0)]
+        [Range(0, 100)]
+        [LabelKey($"${LANGUAGE_SECTION}.QuestPlayerPercent.Label")]
+        [TooltipKey($"${LANGUAGE_SECTION}.QuestPlayerPercent.Tooltip")]
+        public int QuestPlayerPercent;
+
+        [DefaultValue(0)]
+        [Range(0, 59)]
+        [LabelKey($"${LANGUAGE_SECTION}.QuestTimeMinutes.Label")]
+        [TooltipKey($"${LANGUAGE_SECTION}.QuestTimeMinutes.Tooltip")]
+        public int QuestTimeMinutes;
+
+        [DefaultValue(0)]
+        [Range(0, 23)]
+        [LabelKey($"${LANGUAGE_SECTION}.QuestTimeHours.Label")]
+        [TooltipKey($"${LANGUAGE_SECTION}.QuestTimeHours.Tooltip")]
+        public int QuestTimeHours;
+
+        [DefaultValue(1)]
+        [LabelKey($"${LANGUAGE_SECTION}.QuestTimeDays.Label")]
+        [TooltipKey($"${LANGUAGE_SECTION}.QuestTimeDays.Tooltip")]
+        public int QuestTimeDays;
     }
 }

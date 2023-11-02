@@ -10,11 +10,19 @@
     <Company />
   </PropertyGroup>
   <ItemGroup>
+    <AdditionalFiles Remove="Localization\en-US_Mods.BetterFishing.AnglerQuests.hjson" />
+    <AdditionalFiles Remove="Localization\en_US_Mods.BetterFishing.AnglerQuests.hjson" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="description_workshop.txt" />
     <None Remove="Features_todo.txt" />
     <None Remove="Localization\en-US.hjson" />
+    <None Remove="Localization\en-US_Mods.BetterFishing.AnglerShop.hjson" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Item\" />
   </ItemGroup>
 </Project>
