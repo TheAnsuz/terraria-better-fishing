@@ -1,5 +1,6 @@
 ﻿Version 2.2.0
 
 [h2]Added[/h2]
+- Custom Angler quest renewal
 - Angler shop
 - Added shop compatibility for calamity mod
