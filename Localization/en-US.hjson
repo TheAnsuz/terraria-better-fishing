@@ -9,8 +9,46 @@ Mods: {
 				Label: Multilure Mode
 			}
 
-			Header.Multilure: "[i:2373] Multilure"
+			Header: {
+				Multilure: "[i:2373] Multilure"
+				Quests: "[i:2367] Angler quests"
+			}
+
 			ConfigName: Global configuration
+
+			QuestPlayerPercent: {
+				Label: Required player percent
+				Tooltip:
+					'''
+						The amount of players required to have completed the angler quest to allow it to change
+						A value of 100 requires every single player to have completed the quest while a value of 0 allows the quest to change naturally
+					'''
+			}
+
+			AutoRenew: {
+				Label: Auto renew quests
+				Tooltip:
+					'''
+						Whenever a player completes his quest there will be a change attempt.
+						This attempt to change the quest will only succeed if the [c/45d1c8:Required player percent]
+						is met.
+					'''
+			}
+
+			QuestTimeMinutes: {
+				Label: Quest Time Minutes
+				Tooltip: The amount of ingame minutes that need to pass before the next quest is available
+			}
+
+			QuestTimeHours: {
+				Label: Quest Time Hours
+				Tooltip: The amount of ingame hours that need to pass before the next quest is available
+			}
+
+			QuestTimeDays: {
+				Label: Quest Time Days
+				Tooltip: The amount of ingame days that need to pass before the next quest is available
+			}
 		}
 
 		Multilure: {
