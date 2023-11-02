@@ -21,5 +21,7 @@ namespace BetterFishing.EasyQuests
         public abstract bool ChangeQuestHook(On_Main.orig_AnglerQuestSwap orig);
         public abstract bool UpdateTimer(double dayRate);
         public abstract double GetRemainingTime();
+        public virtual void Dispose() { 
+        }
     }
 }

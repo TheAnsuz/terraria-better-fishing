@@ -47,6 +47,29 @@ namespace BetterFishing.EasyQuests
             packet.Send(reader.ReadByte());
         }
 
+        public override void PostWorldGen()
+        {
+            Interpreter = null;
+
+            switch (Main.netMode)
+            {
+                case NetmodeID.SinglePlayer:
+                    Interpreter = new EasyQuestInterpreterSingleplayer();
+                    break;
+
+                case NetmodeID.MultiplayerClient:
+                    Interpreter = new EasyQuestInterpreterMultiplayerClient();
+                    break;
+
+                case NetmodeID.Server:
+                    Interpreter = new EasyQuestInterpreterServer();
+                    break;
+            }
+
+            BetterFishing.Instance.Logger.Debug("Loaded " + Interpreter.ToString());
+            Interpreter.Setup();
+        }
+
         public override void OnWorldLoad()
         {
             Interpreter = null;
@@ -68,6 +91,13 @@ namespace BetterFishing.EasyQuests
 
             BetterFishing.Instance.Logger.Debug("Loaded " + Interpreter.ToString());
             Interpreter.Setup();
+        }
+
+        public override void OnWorldUnload()
+        {
+            BetterFishing.Instance.Logger.Debug("Unloaded " + Interpreter.ToString());
+            Interpreter.Dispose();
+            Interpreter = null;
         }
 
         public override void LoadWorldData(TagCompound tag)
