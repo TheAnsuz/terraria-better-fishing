@@ -19,6 +19,8 @@ namespace BetterFishing.EasyQuests
     {
         internal const string DATA_TIMESTAMP_NOW = "timestamp_now";
         internal const string DATA_TIMESTAMP_NEXT = "timestamp_next";
+        internal const string DATA_TIMESTAMP_OLD = "timestamp_old";
+        internal const string DATA_TIMESTAMP_OLD_DAY = "timestamp_old_day";
 
         internal static EasyQuestInterpreter Interpreter;
 
@@ -29,6 +31,7 @@ namespace BetterFishing.EasyQuests
             PacketHandler.SetListener(PacketID.ANGLER_TIME_ANSWER, Packet_AnglerTimeAnswer);
             PacketHandler.SetListener(PacketID.ANGLER_QUEST, Packet_AnglerQuest);
         }
+
 
         private void Packet_AnglerTimeAnswer(BinaryReader reader, PacketType type, int senderIndex)
         {
@@ -47,30 +50,13 @@ namespace BetterFishing.EasyQuests
             packet.Send(reader.ReadByte());
         }
 
-        public override void PostWorldGen()
+        public override void OnWorldLoad()
         {
-            Interpreter = null;
-
-            switch (Main.netMode)
-            {
-                case NetmodeID.SinglePlayer:
-                    Interpreter = new EasyQuestInterpreterSingleplayer();
-                    break;
-
-                case NetmodeID.MultiplayerClient:
-                    Interpreter = new EasyQuestInterpreterMultiplayerClient();
-                    break;
-
-                case NetmodeID.Server:
-                    Interpreter = new EasyQuestInterpreterServer();
-                    break;
-            }
-
-            BetterFishing.Instance.Logger.Debug("Loaded " + Interpreter.ToString());
-            Interpreter.Setup();
+            BetterFishing.Instance.Logger.Debug("World load");
+            AssignInterpreter();
         }
 
-        public override void OnWorldLoad()
+        internal void AssignInterpreter()
         {
             Interpreter = null;
 
@@ -102,16 +88,26 @@ namespace BetterFishing.EasyQuests
 
         public override void LoadWorldData(TagCompound tag)
         {
+            BetterFishing.Instance.Logger.Debug("Load world data");
             Interpreter.Load(tag);
         }
 
         public override void SaveWorldData(TagCompound tag)
         {
+            // When a new world is generated, the save is invoked
+            // however there is no need to save contents as Load implements a default behavior when no tags are present
+            if (Interpreter == null)
+                return;
+
             Interpreter.Save(tag);
         }
 
         private void CustomAnglerQuestSwap(On_Main.orig_AnglerQuestSwap orig)
         {
+            // This method is invoked whenever a world is generated
+            if (Interpreter == null)
+                return;
+
             if (Interpreter.ChangeQuestHook(orig))
                 Interpreter.Notify();
         }
