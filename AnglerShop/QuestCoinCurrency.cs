@@ -15,8 +15,8 @@ namespace BetterFishing.AnglerShop
     {
         public QuestCoinCurrency(int coinItemID, long currencyCap) : base(coinItemID, currencyCap)
         {
-            this.CurrencyTextKey = Language.GetOrRegister($"{AnglerShopSystem.LANGUAGE_SECTION}.CurrencyName").Value;
-            this.CurrencyTextColor = Color.LightCoral;
+            CurrencyTextKey = Language.GetOrRegister($"{BetterFishing.LOCALIZATION_PATH}.AnglerShop.CurrencyName").Value;
+            CurrencyTextColor = Color.LightCoral;
         }
     }
 }

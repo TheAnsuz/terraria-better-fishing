@@ -32,12 +32,13 @@ namespace BetterFishing.Config
             }
         }
 
+        public event ConfigurationChanged OnConfigurationChanged;
+
+        public delegate void ConfigurationChanged();
+
         public override void OnChanged()
         {
-            AnglerShop.AnglerShop.CalculatedMaxLine = 0;
-
-            if (AnglerShop.AnglerShop.IsOpen)
-                AnglerShop.AnglerShop.OpenAnglerShop();
+            OnConfigurationChanged?.Invoke();
         }
 
         [Header($"${LANGUAGE_SECTION}.Header.Multilure")]
