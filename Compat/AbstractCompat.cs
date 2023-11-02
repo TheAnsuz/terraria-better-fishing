@@ -1,4 +1,5 @@
-﻿using BetterFishing.Multilure;
+﻿using BetterFishing.AnglerShop;
+using BetterFishing.Multilure;
 using Terraria.ModLoader;
 
 namespace BetterFishing.Compat
@@ -11,19 +12,24 @@ namespace BetterFishing.Compat
 
         public Mod Mod;
 
-        public void TryEnable()
+        public virtual void TryEnable()
         {
             if (ModLoader.TryGetMod(ModName, out Mod))
             {
                 LoadMultilure(MultilureModRegistry.Modded(Mod));
+                LoadAnglerShop(AnglerShop.AnglerShop.Modded(Mod));
+                AddAnglerQuestRewards(AnglerCoinReward.Modded(Mod));
             }
         }
 
-        public void TryDisable()
+        public virtual void TryDisable()
         {
             if (!IsEnabled())
                 return;
         }
+        protected abstract void AddAnglerQuestRewards(AnglerCoinRewardModded Rewards);
+
+        protected abstract void LoadAnglerShop(ModdedShop Shop);
 
         protected abstract void LoadMultilure(MultilureModRegistry Reg);
     }

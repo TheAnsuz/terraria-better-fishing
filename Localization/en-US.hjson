@@ -1,16 +1,38 @@
 Mods: {
 	BetterFishing: {
 		Configs: {
+			ConfigName: Global configuration
+
 			MultilureMode: {
+				Label: Multilure Mode
 				Tooltip: Changes how the multilure complexity and conditions works
 				DISABLED.Label: DISABLED
 				SIMPLE.Label: SIMPLE
 				NORMAL.Label: NORMAL
-				Label: Multilure Mode
 			}
 
-			Header.Multilure: "[i:2373] Multilure"
-			ConfigName: Global configuration
+			Header: {
+				Multilure: "[i:2373] Multilure"
+				AnglerShop: "[i:BetterFishing/QuestCoinItem] Angler shop"
+			}
+
+			AnglerShopMode: {
+				Label: Angler Shop Mode
+				Tooltip:
+					'''
+					Changes the requirements for different angler items to appear in the shop
+					[c/42b9f5:Disabled]: Fully disables the angler shop
+					[c/42b9f5:Simple]: Every item is always available (except hardmode)
+					[c/42b9f5:Progressive]: Items unlock depending on the amount of quests completed and game stage
+					[c/42b9f5:Conditional]: Items unlock depending on conditions such as where is the angler housed
+					[c/42b9f5:Complex]: Items unlock depending on the amount of quests and complex conditions [c/80e0b0:Recommended]
+					'''
+				DISABLED.Label: "[c/cc5343:DISABLED]"
+				COMPLEX.Label: "[c/80e0b0:COMPLEX]"
+				PROGRESSIVE.Label: PROGRESSIVE
+				SIMPLE.Label: SIMPLE
+				CONDITIONAL.Label: CONDITIONAL
+			}
 		}
 
 		Multilure: {

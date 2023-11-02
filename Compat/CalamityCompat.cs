@@ -1,4 +1,6 @@
-﻿using BetterFishing.Config.Model;
+﻿using BetterFishing.AnglerShop;
+using BetterFishing.AnglerShop.SellCondition;
+using BetterFishing.Config.Model;
 using BetterFishing.Multilure;
 using BetterFishing.Multilure.Condition;
 using BetterFishing.Util;
@@ -13,6 +15,7 @@ namespace BetterFishing.Compat
     {
         public override string ModName => "CalamityMod";
 
+        // Rods
         public const string EarlyBloomRod = "EarlyBloomRod";
         public const string FeralDoubleRod = "FeralDoubleRod";
         public const string HeronRod = "HeronRod";
@@ -22,6 +25,16 @@ namespace BetterFishing.Compat
         public const string TheDevourerofCods = "TheDevourerofCods";
         public const string VerstaltiteFishingRod = "VerstaltiteFishingRod";
         public const string WulfrumFishingPole = "WulfrumRod";
+
+        // Quest fish
+        public const string Brimlish = "Brimlish";
+        public const string Slurpfish = "Slurpfish";
+        public const string EutrophicSandfish = "EutrophicSandfish";
+        public const string Serpentuna = "Serpentuna";
+        public const string SurfClam = "SurfClam";
+
+        // Bait
+        public const string GrandMarquisBait = "GrandMarquisBait";
 
         protected override void LoadMultilure(MultilureModRegistry Reg)
         {
@@ -129,6 +142,27 @@ namespace BetterFishing.Compat
                 .RemoveTooltip("Tooltip0")
                 .AddTooltip(RiftReeler, 3, 5)
                 .Finish();
+        }
+
+        protected override void LoadAnglerShop(ModdedShop Shop)
+        {
+            Shop.Sell(GrandMarquisBait)
+                .AfterQuest(30)
+                .WithCondition(SellCondition.Biome(BiomeUtils.OCEAN))
+                .PriceCoins(0, 1, 0, 0);
+        }
+
+        protected override void AddAnglerQuestRewards(AnglerCoinRewardModded Rewards)
+        {
+            int normal = 2;
+            int hard = 3;
+            int hardmode = 2;
+
+            Rewards.Add(Brimlish).Amount(hardmode + hard);
+            Rewards.Add(Slurpfish).Amount(normal);
+            Rewards.Add(EutrophicSandfish).Amount(hardmode + normal);
+            Rewards.Add(Serpentuna).Amount(hard);
+            Rewards.Add(SurfClam).Amount(normal);
         }
     }
 }

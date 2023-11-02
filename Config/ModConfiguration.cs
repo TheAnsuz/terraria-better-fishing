@@ -30,6 +30,14 @@ namespace BetterFishing.Config
             }
         }
 
+        public override void OnChanged()
+        {
+            AnglerShop.AnglerShop.CalculatedMaxLine = 0;
+
+            if (AnglerShop.AnglerShop.IsOpen)
+                AnglerShop.AnglerShop.OpenAnglerShop();
+        }
+
         [Header($"${LANGUAGE_SECTION}.Header.Multilure")]
         [DefaultValue(MultilureMode.NORMAL)]
         [DrawTicks]
@@ -37,6 +45,12 @@ namespace BetterFishing.Config
         [TooltipKey($"${LANGUAGE_SECTION}.MultilureMode.Tooltip")]
         public MultilureMode MultilureMode;
 
+        [Header($"${LANGUAGE_SECTION}.Header.AnglerShop")]
+        [DefaultValue(AnglerShopMode.COMPLEX)]
+        [DrawTicks]
+        [LabelKey($"${LANGUAGE_SECTION}.AnglerShopMode.Label")]
+        [TooltipKey($"${LANGUAGE_SECTION}.AnglerShopMode.Tooltip")]
+        public AnglerShopMode AnglerShopMode;
         /*
         [DefaultValue(MultilurePower.NORMAL)]
         [DrawTicks]

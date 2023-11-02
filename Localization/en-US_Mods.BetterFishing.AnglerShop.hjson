@@ -1,0 +1,11 @@
+Coin: {
+	DisplayName: Quest coin
+	Tooltip:
+		'''
+		'A gift for adventurers whose spirit is unbreakable.'
+		Can be exchanged for goods at the angler's shop
+		'''
+}
+
+CurrencyName: Quest coin
+QuestsLabel: Completed quests: {0}
