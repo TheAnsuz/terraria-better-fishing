@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using BetterFishing.Util;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +30,7 @@ namespace BetterFishing.EasyQuests
 
         public override double GetRemainingTime()
         {
-            ModPacket packet = BetterFishing.Instance.GetPacket();
-
-            packet.Write(BetterFishing.PACKET_ANGLER_TIME_REQUEST);
+            ModPacket packet = PacketHandler.Create(PacketID.ANGLER_TIME_REQUEST, sizeof(byte));
             packet.Write((byte)Main.myPlayer);
             packet.Send(255);
 

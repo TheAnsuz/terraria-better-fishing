@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BetterFishing.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,9 +58,7 @@ namespace BetterFishing.EasyQuests
                 if (Netplay.Clients[i].State != 10)
                     continue;
 
-                ModPacket packet = BetterFishing.Instance.GetPacket();
-
-                packet.Write(BetterFishing.PACKET_ANGLER_QUEST);
+                ModPacket packet = PacketHandler.Create(PacketID.ANGLER_QUEST, 0);
                 packet.Send(i);
             }
         }

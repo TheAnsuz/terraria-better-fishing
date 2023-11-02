@@ -22,15 +22,15 @@ namespace BetterFishing.AnglerShop
         private readonly static Vector2 POSITION_QUESTS = new Vector2(110, 435);
         private readonly static Vector2 POSITION_SCROLL_ICON = new Vector2(75, 435);
         private const int FLICK_TIME = 60;
-        private readonly static Texture2D ScrollIcon = ModContent.Request<Texture2D>(name: $"{BetterFishing.ASSETS_BASE}/UI/MouseScrollIcon", mode: ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
-        private readonly static Texture2D ScrollIconFlick = ModContent.Request<Texture2D>(name: $"{BetterFishing.ASSETS_BASE}/UI/MouseScrollIconFlick", mode: ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+        private readonly static Texture2D ScrollIcon = ModContent.Request<Texture2D>(name: $"{BetterFishing.ASSETS_PATH}/UI/MouseScrollIcon", mode: ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+        private readonly static Texture2D ScrollIconFlick = ModContent.Request<Texture2D>(name: $"{BetterFishing.ASSETS_PATH}/UI/MouseScrollIconFlick", mode: ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
 
         private int _flickFrames = 0;
         private bool _flick = false;
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            LocalizedText questAmount = Language.GetOrRegister($"{BetterFishing.LANGUAGE_BASE}.AnglerShop.QuestsLabel");
+            LocalizedText questAmount = Language.GetOrRegister($"{BetterFishing.LANGUAGE_PATH}.AnglerShop.QuestsLabel");
 
             ChatManager.DrawColorCodedStringWithShadow(
                     spriteBatch,

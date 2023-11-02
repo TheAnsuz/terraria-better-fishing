@@ -26,6 +26,10 @@ namespace BetterFishing.Compat
             LoadMultilure(MultilureRegistry.Vanilla());
         }
 
+        public void TryDisable() { 
+            
+        }
+        
         protected void AddAnglerQuestRewards(AnglerCoinRewardVanilla Rewards)
         {
             int easy = 1;
@@ -346,8 +350,5 @@ namespace BetterFishing.Compat
             */
         }
 
-        internal void TryDisable() { 
-            
-        }
     }
 }

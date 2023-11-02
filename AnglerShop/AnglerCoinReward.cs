@@ -11,7 +11,7 @@ namespace BetterFishing.AnglerShop
     internal sealed class AnglerCoinReward
     {
         private readonly static AnglerCoinRewardEntry Default = new AnglerCoinRewardEntry(-1).Amount(1);
-        protected internal static readonly Dictionary<int, AnglerCoinRewardEntry> _rewards = new Dictionary<int, AnglerCoinRewardEntry>();
+        internal static readonly Dictionary<int, AnglerCoinRewardEntry> _rewards = new Dictionary<int, AnglerCoinRewardEntry>();
         private static AnglerCoinRewardVanilla _vanilla = new AnglerCoinRewardVanilla();
         private AnglerCoinReward() { }
 

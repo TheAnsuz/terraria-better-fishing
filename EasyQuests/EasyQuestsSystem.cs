@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using BetterFishing.Util;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,6 +25,26 @@ namespace BetterFishing.EasyQuests
         public override void Load()
         {
             On_Main.AnglerQuestSwap += CustomAnglerQuestSwap;
+            PacketHandler.SetListener(PacketID.ANGLER_TIME_REQUEST, Packet_AnglerTimeRequest);
+            PacketHandler.SetListener(PacketID.ANGLER_TIME_ANSWER, Packet_AnglerTimeAnswer);
+            PacketHandler.SetListener(PacketID.ANGLER_QUEST, Packet_AnglerQuest);
+        }
+
+        private void Packet_AnglerTimeAnswer(BinaryReader reader, PacketType type, int senderIndex)
+        {
+            EasyQuestUtils.NotifyRemainingTime(reader.ReadDouble());
+        }
+
+        private void Packet_AnglerQuest(BinaryReader reader, PacketType type, int senderIndex)
+        {
+            Interpreter.Notify();
+        }
+
+        private void Packet_AnglerTimeRequest(BinaryReader reader, PacketType type, int senderIndex)
+        {
+            ModPacket packet = PacketHandler.Create(PacketID.ANGLER_TIME_ANSWER, sizeof(double));
+            packet.Write(Interpreter.GetRemainingTime());
+            packet.Send(reader.ReadByte());
         }
 
         public override void OnWorldLoad()
