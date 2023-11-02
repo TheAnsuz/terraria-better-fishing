@@ -19,5 +19,9 @@ namespace BetterFishing.Util
                 Main.windSpeedTarget = value / 50f;
             }
         }
+
+        public static bool Raining => Main.raining;
+
+        public static bool Hardmode => Main.hardMode;
     }
 }
