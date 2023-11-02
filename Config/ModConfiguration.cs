@@ -1,5 +1,6 @@
 ﻿using BetterFishing.Config.Model;
 using System.ComponentModel;
+using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader.Config;
 
@@ -23,8 +24,9 @@ namespace BetterFishing.Config
 
                 case Terraria.ID.NetmodeID.MultiplayerClient:
                 default:
-                    if (whoAmI == 0)
-                        return true; // On a steam-hosted match. the first one to join is always the host
+                    if (Main.countsAsHostForGameplay[whoAmI])
+                        return true; // If the player counts as host, it can change the config
+
                     message = Language.GetTextValue($"{LANGUAGE_SECTION}.NoPermission");
                     return false;
             }
@@ -51,7 +53,7 @@ namespace BetterFishing.Config
         [LabelKey($"${LANGUAGE_SECTION}.AnglerShopMode.Label")]
         [TooltipKey($"${LANGUAGE_SECTION}.AnglerShopMode.Tooltip")]
         public AnglerShopMode AnglerShopMode;
-        
+
         [Header($"${LANGUAGE_SECTION}.Header.Quests")]
         [DefaultValue(0)]
         [Range(0, 100)]
