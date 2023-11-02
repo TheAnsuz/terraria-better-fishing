@@ -1,6 +1,5 @@
 ﻿using BetterFishing.Config.Model;
 using BetterFishing.Multilure.Condition;
-using BetterFishing.Util;
 using System.Collections.Generic;
 using Terraria.Localization;
 
