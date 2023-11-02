@@ -1,81 +1,79 @@
 Mods: {
-  BetterFishing: {
-    Configs: {
-      ConfigName: Global configuration
+	BetterFishing: {
+		Configs: {
+			ConfigName: Global configuration
 
-      Header: {
-        Multilure: "[i:2373] Multilure"
-        AnglerShop: "[i:BetterFishing/QuestCoinItem] Angler shop"
-        Quests: "[i:2367] Angler quests"
-      }
+			Header: {
+				Multilure: "[i:2373] Multilure"
+				AnglerShop: "[i:BetterFishing/QuestCoinItem] Angler shop"
+				Quests: "[i:2367] Angler quests"
+			}
 
-      MultilureMode: {
-        Label: Multilure Mode
-        Tooltip: 
-            '''
-            Changes how the multilure complexity and conditions works
-            [c/42b9f5:Disabled]: Fully disables the multilure feature
-            [c/42b9f5:Simple]: There is a fixed amount of lines per rod
-            [c/42b9f5:Complex]: The amount of lines depends on rod conditions such as biome or time of day [c/80e0b0:Recommended]"
-            '''
+			MultilureMode: {
+				Label: Multilure Mode
+				Tooltip:
+					'''
+					Changes how the multilure complexity and conditions works
+					[c/42b9f5:Disabled]: Fully disables the multilure feature
+					[c/42b9f5:Simple]: There is a fixed amount of lines per rod
+					[c/42b9f5:Complex]: The amount of lines depends on rod conditions such as biome or time of day [c/80e0b0:Recommended]"
+					'''
+				DISABLED.Label: "[c/cc5343:DISABLED]"
+				SIMPLE.Label: SIMPLE
+				NORMAL.Label: "[c/80e0b0:COMPLEX]"
+			}
 
-        DISABLED.Label: "[c/cc5343:DISABLED]"
-        SIMPLE.Label: SIMPLE
-        NORMAL.Label: "[c/80e0b0:COMPLEX]"
-      }
+			QuestPlayerPercent: {
+				Label: Required player percent
+				Tooltip:
+					'''
+					The amount of players required to have completed the angler quest to allow it to change
+					A value of 100 requires every single player to have completed the quest while a value of 0 
+					allows the quest to change naturally
+					'''
+			}
 
-      QuestPlayerPercent: {
-        Label: Required player percent
-        Tooltip:
-          '''
-          The amount of players required to have completed the angler quest to allow it to change
-          A value of 100 requires every single player to have completed the quest while a value of 0 
-          allows the quest to change naturally
-          '''
-      }
+			AutoRenew: {
+				Label: Auto renew quests
+				Tooltip:
+					'''
+					Whenever a player completes his quest there will be a change attempt.
+					This attempt to change the quest will only succeed if the [c/45d1c8:Required player percent] is met
+					'''
+			}
 
-      AutoRenew: {
-        Label: Auto renew quests
-        Tooltip: 
-            '''
-            Whenever a player completes his quest there will be a change attempt.
-            This attempt to change the quest will only succeed if the [c/45d1c8:Required player percent] is met
-            '''
-      }
+			QuestTimeMinutes: {
+				Label: Quest Time Minutes
+				Tooltip: The amount of ingame minutes that need to pass before the next quest is available
+			}
 
-      QuestTimeMinutes: {
-        Label: Quest Time Minutes
-        Tooltip: The amount of ingame minutes that need to pass before the next quest is available
-      }
+			QuestTimeHours: {
+				Label: Quest Time Hours
+				Tooltip: The amount of ingame hours that need to pass before the next quest is available
+			}
 
-      QuestTimeHours: {
-        Label: Quest Time Hours
-        Tooltip: The amount of ingame hours that need to pass before the next quest is available
-      }
+			QuestTimeDays: {
+				Label: Quest Time Days
+				Tooltip: The amount of ingame days that need to pass before the next quest is available
+			}
 
-      QuestTimeDays: {
-        Label: Quest Time Days
-        Tooltip: The amount of ingame days that need to pass before the next quest is available
-      }
-
-      AnglerShopMode: {
-        Label: Angler Shop Mode
-        Tooltip: 
-            '''
-            Changes the requirements for different angler items to appear in the shop
-            [c/42b9f5:Disabled]: Fully disables the angler shop
-            [c/42b9f5:Simple]: Every item is always available (except hardmode)
-            [c/42b9f5:Progressive]: Items unlock depending on the amount of quests completed and game stage
-            [c/42b9f5:Conditional]: Items unlock depending on conditions such as where is the angler housed
-            [c/42b9f5:Complex]: Items unlock depending on the amount of quests and complex conditions [c/80e0b0:Recommended]
-            '''
-        
-        DISABLED.Label: "[c/cc5343:DISABLED]"
-        COMPLEX.Label: "[c/80e0b0:COMPLEX]"
-        PROGRESSIVE.Label: PROGRESSIVE
-        SIMPLE.Label: SIMPLE
-        CONDITIONAL.Label: CONDITIONAL
-      }
-    }
-  }
+			AnglerShopMode: {
+				Label: Angler Shop Mode
+				Tooltip:
+					'''
+					Changes the requirements for different angler items to appear in the shop
+					[c/42b9f5:Disabled]: Fully disables the angler shop
+					[c/42b9f5:Simple]: Every item is always available (except hardmode)
+					[c/42b9f5:Progressive]: Items unlock depending on the amount of quests completed and game stage
+					[c/42b9f5:Conditional]: Items unlock depending on conditions such as where is the angler housed
+					[c/42b9f5:Complex]: Items unlock depending on the amount of quests and complex conditions [c/80e0b0:Recommended]
+					'''
+				DISABLED.Label: "[c/cc5343:DISABLED]"
+				COMPLEX.Label: "[c/80e0b0:COMPLEX]"
+				PROGRESSIVE.Label: PROGRESSIVE
+				SIMPLE.Label: SIMPLE
+				CONDITIONAL.Label: CONDITIONAL
+			}
+		}
+	}
 }
