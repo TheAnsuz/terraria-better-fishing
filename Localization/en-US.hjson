@@ -16,7 +16,7 @@ Mods: {
 					Changes how the multilure complexity and conditions works
 					[c/42b9f5:Disabled]: Fully disables the multilure feature
 					[c/42b9f5:Simple]: There is a fixed amount of lines per rod
-					[c/42b9f5:Complex]: The amount of lines depends on rod conditions such as biome or time of day [c/80e0b0:Recommended]"
+					[c/42b9f5:Complex]: The amount of lines depends on rod conditions such as biome or time of day [c/80e0b0:Recommended]
 					'''
 				DISABLED.Label: "[c/cc5343:DISABLED]"
 				SIMPLE.Label: SIMPLE
