@@ -30,7 +30,7 @@ namespace BetterFishing.AnglerShop
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            LocalizedText questAmount = Language.GetOrRegister($"{BetterFishing.LANGUAGE_PATH}.AnglerShop.QuestsLabel");
+            LocalizedText questAmount = Language.GetOrRegister($"{BetterFishing.LOCALIZATION_PATH}.AnglerShop.QuestsLabel");
 
             ChatManager.DrawColorCodedStringWithShadow(
                     spriteBatch,

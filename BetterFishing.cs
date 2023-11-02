@@ -18,7 +18,7 @@ namespace BetterFishing
 {
     public class BetterFishing : Mod
     {
-        public const string LANGUAGE_PATH = "Mods.BetterFishing";
+        public const string LOCALIZATION_PATH = "Mods.BetterFishing";
         public const string ASSETS_PATH = "BetterFishing/Assets";
 
         public readonly static ModConfiguration Configuration = ModContent.GetInstance<ModConfiguration>();
