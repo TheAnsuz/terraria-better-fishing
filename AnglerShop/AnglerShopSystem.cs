@@ -50,9 +50,6 @@ namespace BetterFishing.AnglerShop
             QuestCoinID = ModContent.ItemType<QuestCoinItem>();
             QuestCoinCurrency currency = new(QuestCoinID, Item.CommonMaxStack);
             QuestCoinCurrencyID = CustomCurrencyManager.RegisterCurrency(currency);
-
-            BetterFishing.Instance.AnglerRewards(AnglerCoinReward.Vanilla());
-            BetterFishing.Instance.AjustShop(AnglerShop.Vanilla());
         }
 
         public override void PostUpdateInput()

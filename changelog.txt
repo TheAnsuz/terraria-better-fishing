@@ -4,3 +4,5 @@
 - Custom Angler quest renewal
 - Angler shop
 - Added shop compatibility for calamity mod
+- Minor code inconsistencies for multilure module
+- Improved configuration tooltips
