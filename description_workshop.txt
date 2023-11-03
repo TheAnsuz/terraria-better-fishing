@@ -4,6 +4,7 @@ This mod aims to make fishing a greater and overall faster experience for the pl
 Right now the only modification of this mod is a multilure system but more features are being developed.
 
 The mod at a [u]beta[/u] state, meaning that some features may change in the future and not all content is completly integrated.
+You can contribute with your own ideas or suggestions https://github.com/TheAnsuz/terraria-better-fishing/issues
 
 [h1]Features[/h1]
 [b]Multilure[/b]
@@ -24,8 +25,4 @@ To give a description of what does each implementation:
 [h1]Compatibility[/h1]
 There are no known incompatibilities.
 
-All Vanilla rods have their own implementation
-All Calamity rods have their own implementation
-
-[code]My goal in terms of compatibility is that the mod should be compatible with any other mod worldwide and must not break functionallity of other mods.
-If there is any known incompatibility I will explictly work to fix it or at least notify the users about it[/code]
+Fully compatible with Calamity

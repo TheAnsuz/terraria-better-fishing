@@ -1,9 +1,1 @@
-Main.anglerWhoFinishedToday <bool>
-Main.anglerQuestFinished <array player name>
-Main.player[Main.myPlayer].anglerQuestsFinished <int>
-AnglerQuestSwap() <void>
-
-Main.anglerQuest => index of Main.anglerQuestItemNetIDs, not itemID
-
-Comprobar que al cambiar de dia no se actualiza automaticamente la mision de pescador
-Hacer que se actualice automaticamente cuando el % minimo de jugadores complete la mision
+Test version features prior to release
