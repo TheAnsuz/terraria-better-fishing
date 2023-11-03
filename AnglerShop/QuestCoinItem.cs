@@ -11,9 +11,9 @@ namespace BetterFishing.AnglerShop
 {
     internal class QuestCoinItem : ModItem
     {
-        public override LocalizedText DisplayName => Language.GetOrRegister($"{BetterFishing.LANGUAGE_BASE}.AnglerShop.Coin.DisplayName");
-        public override LocalizedText Tooltip => Language.GetOrRegister($"{BetterFishing.LANGUAGE_BASE}.AnglerShop.Coin.Tooltip");
-        public override string Texture => $"{BetterFishing.ASSETS_BASE}/Item/QuestCoinItem";
+        public override LocalizedText DisplayName => Language.GetOrRegister($"{BetterFishing.LOCALIZATION_PATH}.AnglerShop.Coin.DisplayName");
+        public override LocalizedText Tooltip => Language.GetOrRegister($"{BetterFishing.LOCALIZATION_PATH}.AnglerShop.Coin.Tooltip");
+        public override string Texture => $"{BetterFishing.ASSETS_PATH}/Item/QuestCoinItem";
 
         public override void SetStaticDefaults()
         {

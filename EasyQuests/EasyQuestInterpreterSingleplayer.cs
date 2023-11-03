@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -16,10 +11,14 @@ namespace BetterFishing.EasyQuests
     {
         protected static string DATA_TIMESTAMP_NOW => EasyQuestsSystem.DATA_TIMESTAMP_NOW;
         protected static string DATA_TIMESTAMP_NEXT => EasyQuestsSystem.DATA_TIMESTAMP_NEXT;
+        protected static string DATA_TIMESTAMP_OLD => EasyQuestsSystem.DATA_TIMESTAMP_OLD;
+        protected static string DATA_TIMESTAMP_OLD_DAY => EasyQuestsSystem.DATA_TIMESTAMP_OLD_DAY;
 
         protected static readonly Point NOTIFICATION_OFFSET = new(0, 25);
 
         protected double TimestampNow;
+        protected double TimestampOld;
+        protected bool TimestampOldDay;
         protected double TimestampNext;
         protected LocalizedText NotificationText;
         protected LocalizedText NotificationChatText;
@@ -50,6 +49,8 @@ namespace BetterFishing.EasyQuests
         {
             tag.TryGet(DATA_TIMESTAMP_NOW, out TimestampNow);
             tag.TryGet(DATA_TIMESTAMP_NEXT, out TimestampNext);
+            tag.TryGet(DATA_TIMESTAMP_OLD, out TimestampOld);
+            tag.TryGet(DATA_TIMESTAMP_OLD_DAY, out TimestampOldDay);
         }
 
         public override void Notify()
@@ -88,10 +89,17 @@ namespace BetterFishing.EasyQuests
         {
             tag.Set(DATA_TIMESTAMP_NOW, TimestampNow);
             tag.Set(DATA_TIMESTAMP_NEXT, TimestampNext);
+            tag.Set(DATA_TIMESTAMP_OLD, TimestampOld);
+            tag.Set(DATA_TIMESTAMP_OLD_DAY, TimestampOldDay);
         }
 
         public override void Setup()
         {
+            TimestampNow = 0;
+            TimestampNext = EasyQuestUtils.CalculateNextTime();
+            TimestampOld = Main.time;
+            TimestampOldDay = Main.dayTime;
+
             NotificationSound = SoundID.Chat;
             NotificationSound.Pitch = 0.5f;
             NotificationColor = Color.Aquamarine;
@@ -101,9 +109,18 @@ namespace BetterFishing.EasyQuests
 
         public override bool UpdateTimer(double dayRate)
         {
+            double timeFix = TimestampOldDay == Main.dayTime
+                ? 0
+                : Main.dayTime ? Main.dayLength : Main.nightLength;
+
+            double distance = Main.time + timeFix - TimestampOld;
+
+            TimestampOld = Main.time;
+            TimestampOldDay = Main.dayTime;
+
             if (TimestampNow < TimestampNext)
             {
-                TimestampNow += dayRate;
+                TimestampNow += distance;
                 return false;
             }
             return true;
@@ -113,5 +130,6 @@ namespace BetterFishing.EasyQuests
         {
             return TimestampNext - TimestampNow;
         }
+
     }
 }

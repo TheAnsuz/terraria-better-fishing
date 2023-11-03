@@ -1,2 +1,18 @@
-﻿Multiple mission fishes per day
-Currency to buy fishing items from the angler in a special shop
+﻿Accesory that auto fishes for you (can be configured for crates, equipment and/or quest fish)
+	> Basic (just catches everything)
+	> Advanced (catches according to preferences)
+
+Accesory that increases crate chance/ equipment chance/ fish chance/ quest chance (depending on which one is equipped (4 total))
+Accesory that increases the amount of lines thrown by 2/4/6 (pre-hardmode, hardmode, post-moonlord)
+
+Nets (you throw it into the liquid and get multiple items from it)
+	> Simple net (breaks on use, collects 2-5)
+	> Reinforced net (40% chance to break, collects 2-5)
+	> Dredge net (40% chance to break, better chance fishing crates and equipment, 2-5)
+	> More yet to think
+
+Add hidden fishing items mechanics from vanilla or other mods
+
+Add blade baits (non consumable baits)
+
+Add chum mechanic (increases fishing power on a specific portion of water that reaches the area of the chum)

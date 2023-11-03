@@ -26,6 +26,11 @@ namespace BetterFishing.Compat
             LoadMultilure(MultilureRegistry.Vanilla());
         }
 
+        public void TryDisable()
+        {
+
+        }
+
         protected void AddAnglerQuestRewards(AnglerCoinRewardVanilla Rewards)
         {
             int easy = 1;
@@ -102,6 +107,7 @@ namespace BetterFishing.Compat
 
             Shop.Sell(ItemID.GoldenFishingRod)
                 .Price(35)
+                .WithCondition(SellCondition.Biome(BiomeUtils.OCEAN))
                 .AfterQuest(30);
 
             Shop.Sell(ItemID.HotlineFishingHook)
@@ -162,6 +168,7 @@ namespace BetterFishing.Compat
 
             Shop.Sell(ItemID.AnglerEarring)
                 .Price(10)
+                .WithCondition(SellCondition.Not(SellCondition.Biome(BiomeUtils.DESERT)))
                 .AfterQuest(7);
 
             Shop.Sell(ItemID.TackleBox)
@@ -170,10 +177,17 @@ namespace BetterFishing.Compat
 
             Shop.Sell(ItemID.WeatherRadio)
                 .Price(10)
+                .WithCondition(SellCondition.Custom(
+                        delegate
+                        {
+                            return WorldUtils.Raining;
+                        }
+                    ))
                 .AfterQuest(13);
 
             Shop.Sell(ItemID.Sextant)
                 .Price(10)
+                .WithCondition(SellCondition.Not(SellCondition.Daytime()))
                 .AfterQuest(16);
 
             Shop.Sell(ItemID.FishermansGuide)
@@ -192,6 +206,7 @@ namespace BetterFishing.Compat
 
             Shop.Sell(ItemID.CratePotion)
                 .PriceCoins(0, 2, 25, 0)
+                .WithCondition(SellCondition.Not(SellCondition.Biome(BiomeUtils.DESERT)))
                 .AfterQuest(8);
 
             Shop.Sell(ItemID.ApprenticeBait)
@@ -200,10 +215,12 @@ namespace BetterFishing.Compat
 
             Shop.Sell(ItemID.JourneymanBait)
                 .PriceCoins(0, 0, 45, 0)
+                .WithCondition(SellCondition.Not(SellCondition.Biome(BiomeUtils.DESERT)))
                 .AfterQuest(11);
 
             Shop.Sell(ItemID.MasterBait)
                 .PriceCoins(0, 0, 75, 0)
+                .WithCondition(SellCondition.Biome(BiomeUtils.OCEAN))
                 .AfterQuest(19);
         }
 
@@ -346,8 +363,5 @@ namespace BetterFishing.Compat
             */
         }
 
-        internal void TryDisable() { 
-            
-        }
     }
 }

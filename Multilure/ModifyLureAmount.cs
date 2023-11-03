@@ -1,5 +1,4 @@
 ﻿using BetterFishing.Multilure;
-using BetterFishing.Util;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;

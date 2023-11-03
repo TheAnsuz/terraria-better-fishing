@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BetterFishing.Util;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -14,9 +9,13 @@ namespace BetterFishing.EasyQuests
     {
         protected static string DATA_TIMESTAMP_NOW => EasyQuestsSystem.DATA_TIMESTAMP_NOW;
         protected static string DATA_TIMESTAMP_NEXT => EasyQuestsSystem.DATA_TIMESTAMP_NEXT;
+        protected static string DATA_TIMESTAMP_OLD => EasyQuestsSystem.DATA_TIMESTAMP_OLD;
+        protected static string DATA_TIMESTAMP_OLD_DAY => EasyQuestsSystem.DATA_TIMESTAMP_OLD_DAY;
 
         protected double TimestampNow;
         protected double TimestampNext;
+        private double TimestampOld;
+        private bool TimestampOldDay;
 
         public override bool ChangeQuestHook(On_Main.orig_AnglerQuestSwap orig)
         {
@@ -46,8 +45,11 @@ namespace BetterFishing.EasyQuests
 
         public override void Load(TagCompound tag)
         {
+
             tag.TryGet(DATA_TIMESTAMP_NOW, out TimestampNow);
             tag.TryGet(DATA_TIMESTAMP_NEXT, out TimestampNext);
+            tag.TryGet(DATA_TIMESTAMP_OLD, out TimestampOld);
+            tag.TryGet(DATA_TIMESTAMP_OLD_DAY, out TimestampOldDay);
         }
 
         public override void Notify()
@@ -57,9 +59,7 @@ namespace BetterFishing.EasyQuests
                 if (Netplay.Clients[i].State != 10)
                     continue;
 
-                ModPacket packet = BetterFishing.Instance.GetPacket();
-
-                packet.Write(BetterFishing.PACKET_ANGLER_QUEST);
+                ModPacket packet = PacketHandler.Create(PacketID.ANGLER_QUEST, 0);
                 packet.Send(i);
             }
         }
@@ -68,18 +68,32 @@ namespace BetterFishing.EasyQuests
         {
             tag.Set(DATA_TIMESTAMP_NOW, TimestampNow);
             tag.Set(DATA_TIMESTAMP_NEXT, TimestampNext);
+            tag.Set(DATA_TIMESTAMP_OLD, TimestampOld);
+            tag.Set(DATA_TIMESTAMP_OLD_DAY, TimestampOldDay);
         }
 
         public override void Setup()
         {
-
+            TimestampNow = 0;
+            TimestampNext = EasyQuestUtils.CalculateNextTime();
+            TimestampOld = Main.time;
+            TimestampOldDay = Main.dayTime;
         }
 
         public override bool UpdateTimer(double dayRate)
         {
+            double timeFix = TimestampOldDay == Main.dayTime
+                ? 0
+                : Main.dayTime ? Main.dayLength : Main.nightLength;
+
+            double distance = Main.time + timeFix - TimestampOld;
+
+            TimestampOld = Main.time;
+            TimestampOldDay = Main.dayTime;
+
             if (TimestampNow < TimestampNext)
             {
-                TimestampNow += dayRate;
+                TimestampNow += distance;
                 return false;
             }
 

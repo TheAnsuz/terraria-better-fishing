@@ -6,3 +6,8 @@
 - Added shop compatibility for calamity mod
 - Minor code inconsistencies for multilure module
 - Improved configuration tooltips
+
+[h2]Fixed[/h2]
+- Now the first player who joins a server wont be able to change configuration at will (only those players who count as server's hosts)
+- Multilure descriptions wont be renewed every tick
+- Fixed localizations

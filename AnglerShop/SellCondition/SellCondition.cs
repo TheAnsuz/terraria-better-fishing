@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
+using static BetterFishing.AnglerShop.SellCondition.CustomSellCondition;
 
 namespace BetterFishing.AnglerShop.SellCondition
 {
@@ -26,6 +27,7 @@ namespace BetterFishing.AnglerShop.SellCondition
         public static SellCondition Biome(params int[] biomes) => new BiomeSellCondition(biomes, EMPTY_MOD_BIOME);
         public static SellCondition Biome(params ModBiome[] biomes) => new BiomeSellCondition(EMPTY_BIOME, biomes);
         public static SellCondition Biome(int[] biomes, ModBiome[] modBiomes) => new BiomeSellCondition(biomes, modBiomes);
+        public static SellCondition Custom(CustomCheck check) => new CustomSellCondition(check);
 
         public abstract bool Acomplishes(NPC npc, Player player, Item[] items);
     }

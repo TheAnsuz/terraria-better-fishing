@@ -5,6 +5,7 @@ Information
 	Right now the only modification of this mod is a multilure system but more features are being developed.
 
 	The mod at a BETA state, meaning that some features may change in the future and not all content is completly integrated.
+	You can contribute with your own ideas or suggestions https://github.com/TheAnsuz/terraria-better-fishing/issues
 ___________________________________
 
 ________
@@ -26,6 +27,5 @@ _____________
 Compatibility
 	There are no known incompatibilities.
 
-	All vanilla rods have their own implementation
-	All Calamity rods have their own implementation
+	Fully compatible with Calamity
 ___________________________________

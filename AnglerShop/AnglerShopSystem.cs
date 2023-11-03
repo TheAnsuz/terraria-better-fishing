@@ -18,7 +18,6 @@ namespace BetterFishing.AnglerShop
 {
     internal class AnglerShopSystem : ModSystem
     {
-        public const string LANGUAGE_SECTION = "Mods.BetterFishing.AnglerShop";
         public static int QuestCoinID;
         public static int QuestCoinCurrencyID;
 
@@ -27,12 +26,21 @@ namespace BetterFishing.AnglerShop
         public override void Load()
         {
             On_Player.GetAnglerReward_MainReward += ModifyAnglerReward.GiveRewards;
+            BetterFishing.Configuration.OnConfigurationChanged += OnConfigurationChanged;
             On_Main.SetNPCShopIndex += UpdateShop;
             if (Main.dedServ)
                 return;
 
             _anglerShop = new UserInterface();
             _anglerShop.SetState(new AnglerShopUIState());
+        }
+
+        private void OnConfigurationChanged()
+        {
+            AnglerShop.CalculatedMaxLine = 0;
+
+            if (AnglerShop.IsOpen)
+                AnglerShop.OpenAnglerShop();
         }
 
         private void UpdateShop(On_Main.orig_SetNPCShopIndex orig, int index)
@@ -52,9 +60,15 @@ namespace BetterFishing.AnglerShop
             QuestCoinCurrencyID = CustomCurrencyManager.RegisterCurrency(currency);
         }
 
+        public override void OnWorldUnload()
+        {
+            AnglerShop.CloseAnglerShop();
+        }
+
         public override void PostUpdateInput()
         {
-            if (Main.keyState.IsKeyDown(Keys.Escape)) {
+            if (Main.keyState.IsKeyDown(Keys.Escape))
+            {
                 AnglerShop.CloseAnglerShop();
             }
 

@@ -53,6 +53,7 @@ namespace BetterFishing.Multilure
             {
                 string tooltip = Language.GetOrRegister(_languageKey).Format(_args);
                 _cachedTooltip = new TooltipLine(BetterFishing.Instance, Name, (_mode == MODE_ADD ? Multilure.DESCRIPTION_PREFIX : "") + tooltip);
+                _culture = Language.ActiveCulture;
             }
 
             return _cachedTooltip;
