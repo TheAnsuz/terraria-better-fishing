@@ -1,10 +1,9 @@
 [h1]Information[/h1]
-Current version: 2.2.0
+Current version: 2.2.1
 This mod aims to make fishing a greater and overall faster experience for the player. 
-Right now the only modification of this mod is a multilure system but more features are being developed.
 
-The mod at a [u]beta[/u] state, meaning that some features may change in the future and not all content is completly integrated.
-You can contribute with your own ideas or suggestions https://github.com/TheAnsuz/terraria-better-fishing/issues
+The mod is still in development, meaning that some features may change in the future and not all content is completly integrated.
+You can contribute with your own ideas or suggestions at the mod's github: https://github.com/TheAnsuz/terraria-better-fishing/issues
 
 [h1]Features[/h1]
 [b]Multilure[/b]
@@ -18,11 +17,34 @@ To give a description of what does each implementation:
  [*][u]DISABLED[/u] If you dont like the multilure feature, you can disable it completly.
 [/list]
 
+[b]Angler shop[/b]
+Now you can earn special coins by completing angler quests. The amount of coins depends on the difficulty of the fish to get.
+
+The angler shop will sell every item that the angler can reward you from completing quests. However there are some requirements on what items
+can be sold at a certain point of the game, these requirements can be configured.
+[list]
+ [*][u]DISABLED[/u] The angler shop is completly disabled if you dont like it
+ [*][u]SIMPLE[/u] Every item will be sold from the start (excepting those that require hardmode or other vanilla requirement)
+ [*][u]PROGRESSIVE[/u] Items will be sold according to the amount of quests that the user completed
+ [*][u]CONDITIONAL[/u] Items will be sold depending on requirements such as Angler happiness or time of day
+ [*][u]COMPLEX[/u] A combination of both PROGRESSIVE and CONDITIONAL, so you need to complete quests and buy at a certain hour for example
+[/list]
+
+[b]Easy quests[/b]
+This feature allows you to modify how often the next Angler quest will happen, it can be changed to any value so you can have a new quest ready every 10 minutes
+of gameplay or every week. It's at your choice!
+
+Even if you leave the time as it is in vanilla (1 ingame day) this feature also announces when is the quest ready to those who care about it. Fancy, isn't it?
+
+There is also an option to only allow to change the quest once a percent of players have already completed the existing quest.
+[b]Pro tip[/b] if you set the percent to 100 and quest time to 1 minute, the quest will be renewed once all the players completed it, not wait times involved!
+
 [b]More features on future releases[/b]
 [code]If you have any suggestion or idea of any feature that could look cool for the mod, let me know in the comment section ;)[/code]
+[code]Or if you prefer, you can send your contributions to the github page https://github.com/TheAnsuz/terraria-better-fishing/issues [/code]
 [hr][/hr]
 
 [h1]Compatibility[/h1]
-There are no known incompatibilities.
+[i]There are no known incompatibilities.[/i]
 
-Fully compatible with Calamity
+Calamity compatible

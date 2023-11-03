@@ -1,13 +1,4 @@
-﻿Version 2.2.0
-
-[h2]Added[/h2]
-- Custom Angler quest renewal
-- Angler shop
-- Added shop compatibility for calamity mod
-- Minor code inconsistencies for multilure module
-- Improved configuration tooltips
+﻿Version 2.2.1
 
 [h2]Fixed[/h2]
-- Now the first player who joins a server wont be able to change configuration at will (only those players who count as server's hosts)
-- Multilure descriptions wont be renewed every tick
-- Fixed localizations
+- Mod file size reduced

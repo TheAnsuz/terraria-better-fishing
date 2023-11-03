@@ -6,8 +6,8 @@ The mod features are listed below, however, the mod is currently at a beta stage
 
 ## Features:  
 * Multilure
-
-*(yea thats it for now)*
+* Angler shop
+* Easy quest system
 
 Versions prior to `2.1.1` wont be posted in the repository as there was no repository for them (and later, there was a repository conversion and decided to remove the old history of the mod)
 
@@ -29,6 +29,11 @@ Version naming follows [Tmodloader naming convention](https://github.com/tModLoa
 > changelog.txt  
 > build.txt  
 > description.txt  
+> description_workshop.txt
+
+Also every change should be correctly documented at
+> Readme.md
+> description.txt
 > description_workshop.txt
 
 ### Branch descriptions

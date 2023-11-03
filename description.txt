@@ -1,31 +1,44 @@
-___________
-Information
-	Current version: 2.2.0
-	This mod aims to make fishing a greater and overall faster experience for the player. 
-	Right now the only modification of this mod is a multilure system but more features are being developed.
+[g:5] Information
+Current version: [c/38C6FF:2.2.1]
+This mod aims to make fishing a greater and overall faster experience for the player. 
 
-	The mod at a BETA state, meaning that some features may change in the future and not all content is completly integrated.
-	You can contribute with your own ideas or suggestions https://github.com/TheAnsuz/terraria-better-fishing/issues
-___________________________________
+The mod is still in development, meaning that [c/FF71FF:some features may change in the future] and not all content is completly integrated.
+You can contribute with your own ideas or suggestions at the mod's github: [c/384EFF:https://github.com/TheAnsuz/terraria-better-fishing/issues]
 
-________
-Features
-	MULTILURE
-	There is a complex multilure system that allows for each rod to throw lures depending on some conditions.
-	Due to how this system was approached before I decided to add a configuration so you can revert the system to the older implementation.
+[g:5] Features
+[i:2373][c/AE4CFF:Multilure]
+There is a complex multilure system that allows for each rod to throw lures depending on some conditions.
+Due to how this system was approached before I decided to add a configuration so you can revert the system to the older implementation.
 
-	To give a description of what does each implementation:
-	- SIMPLE: There are no conditions or complexity for the multilure system, each rod has its own amount of lures to throw.
-	- NORMAL: The amount of lures for each rod can depend on complex conditions, such as biome, height, health, mana etc...
-	- DISABLED: If you dont like the multilure feature, you can disable it completly.
+To give a description of what does each implementation:
+- [c/56FFAA:SIMPLE]: There are no conditions or complexity for the multilure system, each rod has its own amount of lures to throw.
+- [c/56FFAA:NORMAL]: The amount of lures for each rod can depend on complex conditions, such as biome, height, health, mana etc...
+- [c/56FFAA:DISABLED]: If you dont like the multilure feature, you can disable it completly.
 
-	More features on future releases
-	If you have any suggestion or idea of any feature that could look cool for the mod, let me know in the comment section ;)
-___________________________________
+[i:BetterFishing/QuestCoinItem][c/AE4CFF:Angler shop]
+Now you can earn special coins by completing angler quests. The amount of coins depends on the difficulty of the fish to get.
 
-_____________
-Compatibility
-	There are no known incompatibilities.
+The angler shop will sell every item that the angler can reward you from completing quests. However there are some requirements on 
+what items can be sold at a certain point of the game, these requirements can be configured.
+- [c/56FFAA:DISABLED]: The angler shop is completly disabled if you dont like it
+- [c/56FFAA:SIMPLE]: Every item will be sold from the start (excepting those that require hardmode or other vanilla requirement)
+- [c/56FFAA:PROGRESSIVE]: Items will be sold according to the amount of quests that the user completed
+- [c/56FFAA:CONDITIONAL]: Items will be sold depending on requirements such as Angler happiness or time of day
+- [c/56FFAA:COMPLEX]: A combination of both PROGRESSIVE and CONDITIONAL, so you need to complete quests and buy at a certain hour for example
 
-	Fully compatible with Calamity
-___________________________________
+[i:2367][c/AE4CFF:Easy quests]
+This feature allows you to modify how often the next Angler quest will happen, it can be changed to any value so you can have a new quest ready every 10 minutes of gameplay or every week. It's at your choice!
+
+Even if you leave the time as it is in vanilla (1 ingame day) this feature also announces when is the quest ready to those who care about it. Fancy, isn't it?
+
+There is also an option to only allow to change the quest once a percent of players have already completed the existing quest.
+[c/FF5656:Pro tip]: if you set the percent to 100 and quest time to 1 minute, the quest will be renewed once all the players completed it, not wait times involved!
+
+More features on future releases
+If you have any suggestion or idea of any feature that could look cool for the mod, let me know in the comment section ;)
+
+
+[g:5] Compatibility
+[c/5683FF:There are no known incompatibilities.]
+
+[c/56FFCF:Calamity compatible]
