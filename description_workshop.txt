@@ -47,4 +47,4 @@ There is also an option to only allow to change the quest once a percent of play
 [h1]Compatibility[/h1]
 [i]There are no known incompatibilities.[/i]
 
-Calamity compatible
+[*]Calamity compatible
