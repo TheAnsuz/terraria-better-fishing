@@ -2,3 +2,5 @@
 
 [h2]Fixed[/h2]
 - Mod file size reduced
+- Updated descriptions
+- Updated to use new configuration system

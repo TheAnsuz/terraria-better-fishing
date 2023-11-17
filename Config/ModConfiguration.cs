@@ -14,7 +14,7 @@ namespace BetterFishing.Config
 
         public override ConfigScope Mode => ConfigScope.ServerSide;
 
-        public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message)
+        public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref NetworkText message)
         {
             switch (Mod.NetID)
             {
@@ -27,7 +27,7 @@ namespace BetterFishing.Config
                     if (Main.countsAsHostForGameplay[whoAmI])
                         return true; // If the player counts as host, it can change the config
 
-                    message = Language.GetTextValue($"{LANGUAGE_SECTION}.NoPermission");
+                    message = NetworkText.FromKey($"{LANGUAGE_SECTION}.NoPermission");
                     return false;
             }
         }
