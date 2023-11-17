@@ -1,4 +1,4 @@
-﻿Version 2.2.1
+﻿Version 2.2.3
 
 [h2]Fixed[/h2]
 - Mod file size reduced
