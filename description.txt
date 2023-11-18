@@ -39,6 +39,6 @@ If you have any suggestion or idea of any feature that could look cool for the m
 
 
 [g:5] Compatibility
-[c/5683FF:There are no known incompatibilities.]
+[c/5683FF:Althrough working, Fargo mutants mod adds a multilure system wich is NOT compatible with this one (you can disable it in the mod config).]
 
 [c/56FFCF:Calamity compatible]
