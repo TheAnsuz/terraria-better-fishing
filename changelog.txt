@@ -4,3 +4,5 @@
 - Mod file size reduced
 - Updated descriptions
 - Updated to use new configuration system
+- Fixed remaining quest time not showing correctly when day/night cycle occurs
+- Fixed angler shop not correctly checking biome conditions 

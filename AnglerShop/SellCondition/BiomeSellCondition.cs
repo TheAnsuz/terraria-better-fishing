@@ -22,7 +22,7 @@ namespace BetterFishing.AnglerShop.SellCondition
 
         public override bool Acomplishes(NPC npc, Player player, Item[] items)
         {
-            return BiomeUtils.InAnyBiome(player, _biomes) || BiomeUtils.InAnyBiome(player, _modBiomes);
+            return BiomeUtils.InAnyBiome(player, _biomes) && BiomeUtils.InAnyBiome(player, _modBiomes);
         }
     }
 }

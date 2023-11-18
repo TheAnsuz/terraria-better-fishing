@@ -45,6 +45,6 @@ There is also an option to only allow to change the quest once a percent of play
 [hr][/hr]
 
 [h1]Compatibility[/h1]
-[i]There are no known incompatibilities.[/i]
+[i]Althrough working, Fargo mutants mod adds a multilure system wich is NOT compatible with this one (you can disable it in the mod config).[/i]
 
 [*]Calamity compatible
