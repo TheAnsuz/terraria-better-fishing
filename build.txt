@@ -1,6 +1,6 @@
 displayName = Better fishing
 author = TheAnsuz
-version = 2.2.3
+version = 2.3.0
 hideCode = true
 hideResources = true
 sortAfter = CalamityMod

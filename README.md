@@ -32,8 +32,8 @@ Version naming follows [Tmodloader naming convention](https://github.com/tModLoa
 > description_workshop.txt
 
 Also every change should be correctly documented at
-> Readme.md
-> description.txt
+> Readme.md  
+> description.txt  
 > description_workshop.txt
 
 ### Branch descriptions

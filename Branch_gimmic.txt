@@ -1,2 +1,1 @@
-Fix day/night cycle for the angler quest updating, whenever a cycle happens, remaining time is not correctly updated and keeps and offset of time
-Fix angler shop conditions not checking correctly biome conditions
+The branch for every 2.3.0 change

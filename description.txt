@@ -1,5 +1,5 @@
 [g:5] Information
-Current version: [c/38C6FF:2.2.3]
+Current version: [c/38C6FF:2.3.0]
 This mod aims to make fishing a greater and overall faster experience for the player. 
 
 The mod is still in development, meaning that [c/FF71FF:some features may change in the future] and not all content is completly integrated.
