@@ -111,7 +111,7 @@ namespace BetterFishing.EasyQuests
         {
             double timeFix = TimestampOldDay == Main.dayTime
                 ? 0
-                : Main.dayTime ? Main.dayLength : Main.nightLength;
+                : Main.dayTime ? Main.nightLength : Main.dayLength;
 
             double distance = Main.time + timeFix - TimestampOld;
 
