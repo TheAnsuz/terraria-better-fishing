@@ -1,1 +1,3 @@
-The branch for every 2.3.0 change
+La tienda del pescador mostrará todos los objetos pero no permitirá que el usuario los compre si no cumple unas condiciones que se mostraran como tooltip del objeto en cuestion.
+
+Además, al comprar el objeto se establecerá su precio normal de venta con monedas normales para evitar que al venderlo en otra tienda vuelva a costar monedas de pescador si lo quieres readquirir
